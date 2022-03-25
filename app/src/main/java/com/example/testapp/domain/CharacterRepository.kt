@@ -6,5 +6,5 @@ interface CharacterRepository {
 
     fun getCharacterList(): LiveData<List<Character>>
 
-    fun loadData(page: Int)
+    suspend fun loadData(page: Int)
 }

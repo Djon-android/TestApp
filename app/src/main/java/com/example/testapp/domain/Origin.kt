@@ -1,6 +1,6 @@
 package com.example.testapp.domain
 
 data class Origin(
-    val name: String,
-    val url: String
+    val nameOrigin: String,
+    val urlOrigin: String
 )
