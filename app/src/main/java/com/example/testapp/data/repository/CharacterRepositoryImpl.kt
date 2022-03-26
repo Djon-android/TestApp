@@ -1,6 +1,7 @@
 package com.example.testapp.data.repository
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Transformations
 import com.example.testapp.data.database.AppDatabase
@@ -26,10 +27,17 @@ class CharacterRepositoryImpl(
     }
 
     override suspend fun loadData(page: Int) {
-        val containerDto = apiService.getListCharacter(page)
-        val characterList = containerDto.characterDto
-        characterList?.let {
-            characterDao.insertAllCharacter(characterList.map { mapper.mapDtoToDbModel(it) })
+        try {
+            val containerDto = apiService.getListCharacter(page)
+            val characterList = containerDto.characterDto
+            characterList?.let {
+                if (page == 1) {
+                    characterDao.deleteAllCharacter()
+                }
+                characterDao.insertAllCharacter(characterList.map { mapper.mapDtoToDbModel(it) })
+            }
+        } catch (e: Exception) {
+            Log.i("itit", e.message.toString())
         }
     }
 }
