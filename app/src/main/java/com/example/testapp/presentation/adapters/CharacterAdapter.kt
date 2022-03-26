@@ -13,7 +13,7 @@ class CharacterAdapter(
     private val context: Context
 ) : ListAdapter<Character, CharacterViewHolder>(CharacterDiffCallback) {
 
-var onReachEndListener: OnReachEndListener? = null
+    var onReachEndListener: OnReachEndListener? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharacterViewHolder {
         val binding = CharacterItemBinding.inflate(
@@ -37,19 +37,17 @@ var onReachEndListener: OnReachEndListener? = null
             tvSpeciesGender.text =
                 String.format(speciesGenderTemplate, character.species, character.gender)
             tvNameLocation.text = character.location.nameLocation
+            tvStatus.text = character.status
             when (character.status) {
                 STATUS_ALIVE -> {
-                    tvStatus.text = character.status
                     tvStatus.setTextColor(context.resources.getColor(R.color.status_tc_alive))
                     tvStatus.setBackgroundResource(R.drawable.bg_status_alive)
                 }
                 STATUS_DEAD -> {
-                    tvStatus.text = character.status
                     tvStatus.setTextColor(context.resources.getColor(R.color.status_tc_dead))
                     tvStatus.setBackgroundResource(R.drawable.bg_status_dead)
                 }
                 else -> {
-                    tvStatus.text = character.status
                     tvStatus.setTextColor(context.resources.getColor(R.color.status_tc_unknown))
                     tvStatus.setBackgroundResource(R.drawable.bg_status_unknown)
                 }

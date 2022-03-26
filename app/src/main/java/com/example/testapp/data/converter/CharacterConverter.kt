@@ -1,7 +1,6 @@
 package com.example.testapp.data.converter
 
 import androidx.room.TypeConverter
-import java.lang.StringBuilder
 
 class CharacterConverter {
     @TypeConverter

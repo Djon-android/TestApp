@@ -5,4 +5,4 @@ import com.example.testapp.databinding.CharacterItemBinding
 
 class CharacterViewHolder(
     val binding: CharacterItemBinding
-): RecyclerView.ViewHolder(binding.root)
+) : RecyclerView.ViewHolder(binding.root)

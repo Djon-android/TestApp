@@ -1,8 +1,6 @@
 package com.example.testapp.presentation
 
 import android.app.Application
-import android.content.Context
-import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -27,11 +25,17 @@ class CharacterViewModel(application: Application) : AndroidViewModel(applicatio
 
     fun loadData(page: Int) {
         viewModelScope.launch {
-            Log.i("itit", "load start")
             _isLoading.value = true
             loadDataUseCase(page)
-            Log.i("itit", "load finish")
             _isLoading.value = false
         }
+    }
+
+    init {
+        loadData(START_PAGE_DOWNLOAD)
+    }
+
+    companion object {
+        private const val START_PAGE_DOWNLOAD = 1
     }
 }

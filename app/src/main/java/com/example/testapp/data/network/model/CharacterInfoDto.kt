@@ -4,7 +4,7 @@ import com.google.gson.annotations.Expose
 
 import com.google.gson.annotations.SerializedName
 
-data class CharacterInfoDto (
+data class CharacterInfoDto(
     @SerializedName("count")
     @Expose
     private var count: Int? = null,
