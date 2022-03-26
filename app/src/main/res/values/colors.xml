@@ -7,4 +7,13 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="appbar">#E5E5E5</color>
+    <color name="status_bg_alive">#C7FFB9</color>
+    <color name="status_bg_dead">#FFE8E0</color>
+    <color name="status_bg_unknown">#EEEEEE</color>
+    <color name="status_tc_alive">#319F16</color>
+    <color name="status_tc_dead">#E93800</color>
+    <color name="status_tc_unknown">#A0A0A0</color>
+    <color name="bg_button_watch">#16FF6B00</color>
+    <color name="tc_button_watch">#FF6B00</color>
 </resources>
