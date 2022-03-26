@@ -9,7 +9,7 @@ import com.example.testapp.data.converter.CharacterConverter
 
 @Database(entities = [CharacterDbModel::class], version = 1, exportSchema = false)
 @TypeConverters(CharacterConverter::class)
-abstract class AppDatabase: RoomDatabase() {
+abstract class AppDatabase : RoomDatabase() {
 
     companion object {
         private val LOCK = Any()
@@ -27,5 +27,6 @@ abstract class AppDatabase: RoomDatabase() {
             }
         }
     }
+
     abstract fun characterDao(): CharacterDao
 }

@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Test app</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="character">Character</string>
+    <string name="watch_episodes">Watch episodes</string>
+    <string name="icon_location">icon location</string>
+    <string name="species_gender_template">%s, %s</string>
 </resources>
